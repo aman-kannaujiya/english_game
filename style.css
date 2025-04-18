@@ -1,0 +1,335 @@
+:root {
+    /* GitHub Light Theme Colors */
+    --github-indigo: #4078c0;
+    --github-mantis: #6cc644;
+    --github-milano-red: #bd2c00;
+    --github-tia-maria: #c9510c;
+    --github-butterfly-bush: #6e5494;
+    --github-alabaster: #fafafa;
+    --github-wild-sand: #f5f5f5;
+    --github-mine-shaft: #333333;
+    
+    /* GitHub Dark Theme Colors */
+    --github-dark-bg: #0d1117;
+    --github-dark-secondary-bg: #161b22;
+    --github-dark-text: #c9d1d9;
+    --github-dark-border: #30363d;
+    --github-dark-button: #21262d;
+    --github-dark-button-hover: #30363d;
+    --github-dark-blue: #1f6feb;
+    --github-dark-green: #238636;
+    --github-dark-red: #da3633;
+    --github-dark-purple: #8957e5;
+    
+    /* Default to dark theme */
+    --bg-color: var(--github-dark-bg);
+    --secondary-bg: var(--github-dark-secondary-bg);
+    --text-color: var(--github-dark-text);
+    --border-color: var(--github-dark-border);
+    --button-bg: var(--github-dark-button);
+    --button-border: var(--github-dark-border);
+    --button-hover-bg: var(--github-dark-button-hover);
+    --button-primary-bg: var(--github-dark-green);
+    --button-primary-hover-bg: #2ea043;
+    --button-danger-bg: var(--github-dark-red);
+    --button-danger-hover-bg: #f85149;
+    --option-bg: var(--github-dark-secondary-bg);
+    --option-hover-bg: var(--github-dark-button-hover);
+    --correct-bg: var(--github-dark-green);
+    --wrong-bg: var(--github-dark-red);
+  }
+  
+  .light-theme {
+    --bg-color: var(--github-alabaster);
+    --secondary-bg: var(--github-wild-sand);
+    --text-color: var(--github-mine-shaft);
+    --border-color: #e1e4e8;
+    --button-bg: #fafbfc;
+    --button-border: rgba(27, 31, 35, 0.15);
+    --button-hover-bg: #f3f4f6;
+    --button-primary-bg: var(--github-mantis);
+    --button-primary-hover-bg: #56b639;
+    --button-danger-bg: var(--github-milano-red);
+    --button-danger-hover-bg: #a52700;
+    --option-bg: var(--github-wild-sand);
+    --option-hover-bg: #e1e4e8;
+    --correct-bg: var(--github-mantis);
+    --wrong-bg: var(--github-milano-red);
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 20px;
+  }
+  
+  .github-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .github-logo svg {
+    fill: var(--text-color);
+  }
+  
+  .theme-toggle {
+    background: var(--button-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .theme-toggle:hover {
+    background-color: var(--button-hover-bg);
+  }
+  
+  .theme-toggle svg {
+    fill: var(--text-color);
+    width: 16px;
+    height: 16px;
+  }
+  
+  .game-container {
+    width: 100%;
+    max-width: 700px;
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    padding: 24px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 16px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    margin-bottom: 16px;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23666' viewBox='0 0 12 12'%3E%3Cpath d='M6 8.825L1.175 4 2.05 3.125 6 7.075 9.95 3.125 10.825 4 6 8.825z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+  }
+  
+  .game-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  
+  .score, .high-score {
+    padding: 4px 12px;
+    border-radius: 20px;
+    background-color: var(--button-bg);
+  }
+  
+  .word {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 24px 0;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--option-bg);
+    text-align: center;
+  }
+  
+  .options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .options li {
+    padding: 12px 16px;
+    margin: 8px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--option-bg);
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+  }
+  
+  .options li:hover {
+    background-color: var(--option-hover-bg);
+  }
+  
+  .options li.correct {
+    background-color: var(--correct-bg);
+    color: white;
+    border-color: var(--correct-bg);
+  }
+  
+  .options li.wrong {
+    background-color: var(--wrong-bg);
+    color: white;
+    border-color: var(--wrong-bg);
+  }
+  
+  .result {
+    margin-top: 16px;
+    font-size: 16px;
+    min-height: 24px;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  button {
+    display: inline-block;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid var(--button-border);
+    border-radius: 6px;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    transition: background-color 0.2s;
+    box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04);
+  }
+  
+  button:hover:not(:disabled) {
+    background-color: var(--button-hover-bg);
+  }
+  
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  #startBtn {
+    background-color: var(--button-primary-bg);
+    color: white;
+    border-color: rgba(27, 31, 35, 0.15);
+    margin-top: 16px;
+  }
+  
+  #startBtn:hover:not(:disabled) {
+    background-color: var(--button-primary-hover-bg);
+  }
+  
+  .game-over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  
+  .game-over.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  .game-over-content {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 24px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  .game-over h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  
+  .restart-btn {
+    background-color: var(--button-primary-bg);
+    color: white;
+    margin-top: 16px;
+  }
+  
+  .restart-btn:hover {
+    background-color: var(--button-primary-hover-bg);
+  }
+  
+  .footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--text-color);
+    opacity: 0.7;
+    text-align: center;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+  }
+  
+  .options li.correct {
+    animation: pulse 0.5s;
+  }
+  
+  .options li.wrong {
+    animation: shake 0.5s;
+  }
+  
